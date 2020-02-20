@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { PostService } from "../post.service";
 import { Post } from "../shared/post";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-post-details",
@@ -10,7 +11,7 @@ import { Post } from "../shared/post";
 })
 export class PostDetailsComponent implements OnInit {
   post: Post;
-  postList: Post[];
+  post$: Observable<Post>;
 
   constructor(
     private route: ActivatedRoute,
@@ -19,8 +20,7 @@ export class PostDetailsComponent implements OnInit {
 
   ngOnInit(): void {
     const postId = this.route.snapshot.paramMap.get("id");
-    this.postService.getPost(postId).then(post => {
-      this.post = post;
-    });
+    this.post$ = this.postService.getPost(postId);
+    
   }
 }

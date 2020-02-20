@@ -40,6 +40,27 @@
       "title": "Post 6",
       "content": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Autem commodi cupiditate dolorem doloremque dolorum fugiat saepe sint soluta ullam voluptates voluptatum?",
       "img": "assets/photo-5.jpeg"
+    },
+    {
+      "author": "",
+      "email": "",
+      "title": "",
+      "content": "",
+      "id": "3vYlZWO"
+    },
+    {
+      "author": "name",
+      "email": "",
+      "title": "ti",
+      "content": "",
+      "id": "d5lYwVG"
+    },
+    {
+      "author": "",
+      "email": "",
+      "title": "",
+      "content": "",
+      "id": "3ul2H7O"
     }
   ]
 }

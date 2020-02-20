@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { PostService } from "../post.service";
 import { Post } from "../shared/post";
+import { Observable } from 'rxjs';
 
 @Component({
   selector: "app-home-page",
@@ -8,13 +9,11 @@ import { Post } from "../shared/post";
   styleUrls: ["./home-page.component.scss"]
 })
 export class HomePageComponent implements OnInit {
-  posts: Post[];
+  posts: Observable<Post[]>;
   constructor(private postService: PostService) {}
 
   ngOnInit() {
-    this.postService.loadPosts().then(posts => {
-      this.posts = posts;
-    });
+    this.posts = this.postService.loadPosts();
   }
 
   handlePostReadMoreClick(post: Post) {
@@ -28,4 +27,5 @@ export class HomePageComponent implements OnInit {
   handlePostAuthorClick(post: Post) {
     console.log("Author clicked: ", post);
   }
+
 }

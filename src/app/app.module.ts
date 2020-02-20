@@ -6,6 +6,8 @@ import { AppComponent } from "./app.component";
 import { HomePageComponent } from "./home-page/home-page.component";
 import { PostDetailsComponent } from "./post-details/post-details.component";
 import { PostComponent } from "./post/post.component";
+import { SubmitPostComponent } from './submit-post/submit-post.component';
+import { FormsModule } from '@angular/forms'
 
 //fb.com/home/0
 
@@ -15,6 +17,7 @@ const routes: Route[] = [
     component: HomePageComponent
   },
   { path: "post/:id", component: PostDetailsComponent },
+  { path: "postform", component: SubmitPostComponent},
   { path: "", pathMatch: "full", redirectTo: "home" },
   { path: "**", redirectTo: "home" }
 ];
@@ -24,9 +27,10 @@ const routes: Route[] = [
     AppComponent,
     HomePageComponent,
     PostComponent,
-    PostDetailsComponent
+    PostDetailsComponent,
+    SubmitPostComponent
   ],
-  imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule],
+  imports: [BrowserModule, RouterModule.forRoot(routes), HttpClientModule, FormsModule],
   providers: [],
   bootstrap: [AppComponent]
 })

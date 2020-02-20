@@ -1,6 +1,6 @@
 <ul class="list-unstyled" id="posts">
   <app-post
-    *ngFor="let laikrastis of posts"
+    *ngFor="let laikrastis of posts | async"
     [post]="laikrastis"
     (readMoreClick)="handlePostReadMoreClick($event)"
     (commentsClick)="handlePostCommentsClick($event)"

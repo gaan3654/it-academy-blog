@@ -1,5 +1,5 @@
 <li>
-  <div class="media">
+  <div class="media" *ngIf="post$ | async as post">
     <img
       *ngIf="post.img"
       class="mr-3"
